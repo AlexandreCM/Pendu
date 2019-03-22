@@ -3,6 +3,12 @@
 	if($_SESSION['connect']==false){
 		header('Location:identification.php');
 	}
+    include("cnx.php");
+	$sql = "SELECT UTI_SCORE FROM utilisateur WHERE UTI_ID LIKE ".$_SESSION['id'].";";
+    $recup=$cnx->query($sql);
+    while ($donnees=$recup->fetch()){
+        $score = $donnees['UTI_SCORE'];
+    }
 ?>
 
 <!DOCTYPE HTML>
@@ -22,6 +28,11 @@
 		<h1>Mon compte</h1>
 		<div class="app">
 		<h2>Que voulez vous faire <?php echo $_SESSION['prenom'];?></h2>
+
+            <div>
+                <p>Score : <?= $score ?></p>
+            </div>
+
 		<a class="btn" href="accueil.php">retour</a><br/>
 		<a class="btn" href="form_modif.php">Modification</a>
 		<a class="btn" href="form_supp.php">Suppresion</a>
