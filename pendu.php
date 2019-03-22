@@ -3,6 +3,7 @@ session_start();
 if($_SESSION['connect'] == false){
 	header('Location:identification.php');
 }
+include("cnx.php");
  ?>
 <!DOCTYPE HTML>
 <html>
@@ -21,7 +22,6 @@ if($_SESSION['connect'] == false){
 	
 	//initialisation partie
 	if($_SESSION['PARTIE'] == true) {
-		include("cnx.php");
 		
 		// RECUP id mot
 		$recup=$cnx->query("SELECT COUNT(MOT_ID) AS NBMOT FROM mot");
@@ -103,6 +103,7 @@ if($_SESSION['connect'] == false){
 	}
 	if($comptevictoire==strlen($_SESSION['mot'])){
 		echo '<p>Bravo !! Vous avez gagné.</p><br/><a href="replay.php" class="btn">rejouer</a>';
+        $recup=$cnx->query("UPDATE utilisateur SET UTI_SCORE = UTI_SCORE + 1 WHERE UTI_ID LIKE ".$_SESSION['id'].";");
 	}
 	
 	// VERIFE PERDU
