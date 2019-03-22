@@ -20,7 +20,7 @@
 	else {$psw="Attention aucun mot de passe saisie!";}
 	
 	
-	$resultat = $cnx->query("SELECT COUNT(UTI_ID) AS NB, UTI_ID, UTI_NOM, UTI_PRENOM FROM utilisateur WHERE UTI_LOGIN='".$login."' AND UTI_PSW='".$psw."' GROUP BY UTI_ID");
+	$resultat = $cnx->query("SELECT COUNT(UTI_ID) AS NB, UTI_ID, UTI_NOM, UTI_PRENOM FROM utilisateur WHERE UTI_LOGIN='".$login."' AND UTI_PSW='".sha1($psw)."' GROUP BY UTI_ID");
 	// echo "SELECT COUNT(UTI_ID) AS NB, UTI_ID, UTI_NOM, UTI_PRENOM FROM utilisateur WHERE UTI_LOGIN='".$login."' AND UTI_PSW='".$psw."'";
 	
 	while($donnees=$resultat->fetch()){

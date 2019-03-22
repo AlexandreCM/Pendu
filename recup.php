@@ -76,7 +76,7 @@
 		// INSERTION DE DONNEES 
 		if($psw==$psw2 && ($_POST['psw'])!="" && ($_POST['login'])!="" && ($_POST['nom'])!=""&& ($_POST['prenom'])!=""){
 		$cnx->exec("insert into utilisateur (UTI_NOM,UTI_PRENOM,UTI_LOGIN,UTI_PSW) 
-		VALUES ('".$nom."','".$prenom."', '".$login."','".$psw."' )");
+		VALUES ('".$nom."','".$prenom."', '".$login."','".sha1($psw)."' )");
 		$_SESSION['connect']==true;
 		header('Location:identification.php');
 		}

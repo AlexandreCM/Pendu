@@ -59,7 +59,7 @@
 	// modif dans la BDD
 	include ("cnx.php");
 	
-	if ($cnx->exec("UPDATE utilisateur SET UTI_NOM='".$nom."', UTI_PRENOM='".$prenom."', UTI_LOGIN='".$login."', UTI_PSW='".$psw."' WHERE UTI_ID=".$idetu)){
+	if ($cnx->exec("UPDATE utilisateur SET UTI_NOM='".$nom."', UTI_PRENOM='".$prenom."', UTI_LOGIN='".$login."', UTI_PSW='".sha1($psw)."' WHERE UTI_ID=".$idetu)){
 		echo "<p>"." Modification effectué"."</p>";
 	}
 	
