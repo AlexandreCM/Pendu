@@ -1,0 +1,89 @@
+body {
+	font-family: Arial;
+	color:#FFFFFF;
+	/*background-image: url("background.jpg");
+	background-size:cover;*/
+	background-color:black;
+	text-align:center;
+}
+
+table{
+	text-align:left;
+	display:inline-block;
+	position:relative;
+	margin:auto;
+}
+
+.app{
+	background-color:white;
+	height:auto;
+	width:600px;
+	border-radius:10px;
+	margin:auto;
+	margin-top:50px;
+	padding-top:25px;
+	padding-bottom:25px;
+	color:black;
+	text-align:center;
+}
+
+.btn {
+  background-color:white;
+  height: 51px;
+  min-width: 218px;
+  color: #d5402b ;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 50px;
+  text-transform: uppercase;
+  display: inline-block;
+  border: 1px solid #d5402b;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease-out 0s;
+}
+.btn:hover {
+background: #d5402b;
+color: #FFFFFF;
+}
+
+/* bouton lettre */
+.alphabet{
+	width:360px;
+	margin:auto;
+}
+#lettre {
+  height: 20px;
+  min-width: 20px;
+  color: #d5402b ;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 15px;
+  text-transform: uppercase;
+  display: inline-block;
+  border: 1px solid #d5402b;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease-out 0s;
+}
+#lettre:hover {
+background: #d5402b;
+color: #FFFFFF;
+}
+
+.info{
+	text-align:left;
+	display:inline-block;
+	position:relative;
+	margin:auto;
+}
+
+image {
+  border-radius:90px;
+}
